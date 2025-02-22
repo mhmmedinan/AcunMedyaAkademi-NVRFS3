@@ -95,27 +95,123 @@ Console.WriteLine(number10);
 //}
 
 
-Console.Write("Lütfen geçerli bir not giriniz : ");
-int assigment = Convert.ToInt32(Console.ReadLine());
+//Console.Write("Lütfen geçerli bir not giriniz : ");
+//int assigment = Convert.ToInt32(Console.ReadLine());
 
 
-if(assigment<=100 && assigment >= 81)
+//if(assigment<=100 && assigment >= 81)
+//{
+//    Console.WriteLine("AA");
+//}
+//else if (assigment<=80 && assigment>=71)
+//{
+//    Console.WriteLine("BA");
+//}
+//else if(assigment<=70 && assigment >= 51)
+//{
+//    Console.WriteLine("CC");
+//}
+//else
+//{
+//    Console.WriteLine("Geçersiz Sayı");
+//}
+
+
+//loops
+//for,foreach,while,do-while
+
+for(int i = 0; i <= 20; i++)
 {
-    Console.WriteLine("AA");
+    Console.WriteLine(i);
 }
-else if (assigment<=80 && assigment>=71)
+
+//Console.Write("Lütfen bir sayı giriniz : ");
+//int numberFactorial = Convert.ToInt32(Console.ReadLine());
+
+//int total = 1;
+
+////for(int i = 1; i <= numberFactorial; i++)
+////{
+////    total *= i;
+////}
+
+
+//Console.WriteLine($"Factorial of {numberFactorial} is {total}");
+
+//int[] numbers = new int[3];
+//numbers[0] = 10;
+//numbers[1] = 20;
+//numbers[2] = 30;
+
+//for(int i = 0; i < numbers.Length; i++)
+//{
+//    Console.WriteLine(numbers[i]);
+//}
+
+
+string[] names = { "Eşref", "Yakup", "Hasan", "Ceren" };
+foreach(string name in names)
 {
-    Console.WriteLine("BA");
+    Console.WriteLine(name);
 }
-else if(assigment<=70 && assigment >= 51)
+names[3] = "Mehmet";
+foreach (string name in names)
 {
-    Console.WriteLine("CC");
+    Console.WriteLine(name);
+}
+
+
+int[] numbers = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+int max = numbers[0];
+int min = numbers[0];
+
+for(int i = 1; i < numbers.Length; i++)
+{
+    if (numbers[i]>max)
+        max = numbers[i];
+    if (numbers[i]<min)
+        min = numbers[i];
+}
+
+Console.WriteLine($"Max : {max} Min : {min}");
+
+
+//list
+//List<string> names1 = new List<string>();
+//names1.Add("Eşref");
+//names1.Add("Yakup");
+//names1.Add("Hasan");
+
+//foreach(string name in names1)
+//{
+//    Console.WriteLine(name);
+//}
+
+
+List<string> names1 = new List<string> { "Eşref", "Yakup", "Hasan" };
+foreach (string name in names1)
+{
+    Console.WriteLine(name);
+}
+
+
+List<string> baskets = new List<string> { "Apple", "Banana", "Orange", "Pineapple" };
+
+Console.Write("Lütfen sepetten silmek istediğiniz ürünü seçin :  ");
+string deleteBasket = Console.ReadLine();
+
+if (baskets.Contains(deleteBasket))
+{
+    baskets.Remove(deleteBasket);
+    Console.WriteLine($" {deleteBasket} İsimli Ürün sepetten silindi!");
 }
 else
 {
-    Console.WriteLine("Geçersiz Sayı");
+    Console.WriteLine("Ürün sepetinizde bulunmamaktadır!");
 }
 
-
-
-
+Console.WriteLine("Sepetinizdeki ürünler : "); 
+foreach(string basket in baskets)
+{
+    Console.WriteLine(basket);
+}
